@@ -1,3 +1,10 @@
+### Lab 2
+#### **OBJECTIVE:** TO IMPLEMENT QUICK SORT AND EXAMINE ITS TIME EXPENDITURE
+
+**THEORY:** QuickSort is a Divide and Conquer algorithm. It picks an element as a pivot and partitions the given array around the picked pivot. There are many different versions of quickSort that pick pivot in different ways.
+
+**SOURCE CODE:**
+```cpp
 #include <chrono>
 #include <iostream>
 using namespace std;
@@ -52,3 +59,15 @@ int main() {
   cout << endl;
   return 0;
 }
+```
+
+**OUTPUT:** 
+```bash
+Before Sorting:
+32 342 231 43 231 65 32 65 32 5
+1285ns
+After Sorting:
+5 32 32 32 43 65 65 231 231 342
+```
+
+**OBSERVATION:** From output we can observe that time spent to sort an array was 1285 nanosecond i.e. 0.000001285 second

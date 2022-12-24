@@ -1,3 +1,10 @@
+### Lab 3
+#### **OBJECTIVE:** TO IMPLEMENT CIRCULAR QUEUE AND EXAMINE ENQUEUE & DEQUEUE TIME EXPENDITURE
+
+**THEORY:** A Circular Queue is a special version of queue where the last element of the queue is connected to the first element of the queue forming a circle.
+
+**SOURCE CODE:**
+```cpp
 #include <chrono>
 #include <iostream>
 using namespace std;
@@ -91,37 +98,31 @@ int main() {
   auto start = chrono::high_resolution_clock::now();
 
   q1.enqueue(6);
+  cout << "Enqueued!" << endl;
 
   auto finish = chrono::high_resolution_clock::now();
   cout << chrono::duration_cast<chrono::nanoseconds>(finish - start).count()
        << "ns\n";
 
-  cout << "Enqueued!" << endl;
-
   auto sstart = chrono::high_resolution_clock::now();
 
   q1.dequeue();
+  cout << "Dequeued!" << endl;
 
   auto ffinish = chrono::high_resolution_clock::now();
   cout << chrono::duration_cast<chrono::nanoseconds>(ffinish - sstart).count()
        << "ns\n";
-
-  cout << "Dequeued!" << endl;
-  /* auto ssstart = chrono::high_resolution_clock::now(); */
-
-  /* q1.traverse(); */
-  /* cout << "Traversed!" << endl; */
-
-  /* auto fffinish = chrono::high_resolution_clock::now(); */
-  /* cout << chrono::duration_cast<chrono::nanoseconds>(fffinish
-   * - */
-  /*                                                                   ssstart)
-   */
-  /*                  .count() */
-  /*           << "ns\n"; */
-  /* q1.enqueue(9); */
-  /* q1.enqueue(6); */
-  /* q1.enqueue(6); */
-  /* q1.enqueue(6); */
   return 0;
 }
+
+```
+
+**OUTPUT:** 
+```bash
+385ns
+Enqueued!
+318ns
+Dequeued!
+```
+
+**OBSERVATION:** From output we can observe that time spent enqueue an element was 385 nanosecond and to dequeue an element is 318 nanosecond

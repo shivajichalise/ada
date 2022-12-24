@@ -1,3 +1,10 @@
+### Lab 4
+#### **OBJECTIVE:** TO IMPLEMENT MERGE SORT AND EXAMINE ITS TIME EXPENDITURE
+
+**THEORY:** The Merge Sort algorithm is a sorting algorithm that is based on the Divide and Conquer paradigm. In this algorithm, the array is initially divided into two equal halves and then they are combined in a sorted manner. Think of it as a recursive algorithm continuously splits the array in half until it cannot be further divided.
+
+**SOURCE CODE:**
+```java
 class MergeSort {
   void merge(int arr[], int l, int m, int r) {
     int n1 = m - l + 1;
@@ -58,7 +65,6 @@ class MergeSort {
 
   public static void main(String args[]) {
     int arr[] = { 12, 11, 13, 5, 6, 7 };
-    MergeSort ob = new MergeSort();
 
     System.out.println("Given Array");
     printArray(arr);
@@ -66,6 +72,7 @@ class MergeSort {
     System.out.print("Time in nanosecond: ");
     System.out.println(System.nanoTime());
 
+    MergeSort ob = new MergeSort();
     ob.sort(arr, 0, arr.length - 1);
 
     System.out.print("Time in nanosecond: ");
@@ -75,3 +82,19 @@ class MergeSort {
     printArray(arr);
   }
 }
+```
+
+**OUTPUT:** 
+```bash
+Given Array
+12 11 13 5 6 7
+
+Time in nanosecond: 5441556165655
+Time in nanosecond: 5441556294344
+
+Sorted array
+5 6 7 11 12 13
+
+```
+
+**OBSERVATION:** From output we can observe that time spent to sort an array was 5441556165655 - 5441556294344 = 128689 nanosecond.
